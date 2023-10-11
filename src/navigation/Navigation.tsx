@@ -10,12 +10,13 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 import CampusScreen from "../screens/CampusScreen";
+import { ItemData } from "../components/ProfileSquare";
 
 // Define los tipos para las rutas y los parámetros
 type RootStackParamList = {
   Home: undefined;
-  Profile: { userId: string };
-  SearchScreen: { type: string; title?: string };
+  Profile: { userId: string; item: ItemData };
+  SearchScreen: { type: string; title?: string; info?: any[] };
   CampusScreen: undefined;
 };
 

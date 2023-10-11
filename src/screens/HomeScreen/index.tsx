@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import {
   View,
   ScrollView,
@@ -11,10 +11,38 @@ import { RootStackScreenProps } from "../../navigation/Navigation";
 import ButtonComponent from "../../components/ButtonComponent";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { colRefTodas } from "../../firebase/firebaseConfig";
+import { getDocs } from "firebase/firestore";
 
 SplashScreen.preventAutoHideAsync();
 
 const HomeScreen: React.FC<RootStackScreenProps<"Home">> = ({ navigation }) => {
+  const [loading, setLoading] = useState(false);
+
+  const goToTheSpecies = () => {
+    setLoading(true);
+    if (colRefTodas) {
+      getDocs(colRefTodas)
+        .then((snapshot) => {
+          let collection_ = [];
+          snapshot.docs.forEach((doc) => {
+            collection_.push({ ...doc.data(), id: doc.id });
+          });
+          console.log("colRefTodas", collection_);
+          navigation.navigate("SearchScreen", {
+            type: "species",
+            info: collection_,
+          });
+
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log("ERR: colRefTodas", err.message);
+          setLoading(false);
+        });
+    }
+  };
+
   const [fontsLoaded] = useFonts({
     "BlackHanSans-Regular": require("../../fonts/BlackHanSans-Regular.ttf"),
   });
@@ -48,11 +76,7 @@ const HomeScreen: React.FC<RootStackScreenProps<"Home">> = ({ navigation }) => {
         </View>
         <View style={styles.childContainer}>
           <ButtonComponent
-            onPress={() =>
-              navigation.navigate("SearchScreen", {
-                type: "species",
-              })
-            }
+            onPress={() => goToTheSpecies()}
             icon="tree"
             iconSize={48}
             buttonText="Buscar por especie"
@@ -65,7 +89,7 @@ const HomeScreen: React.FC<RootStackScreenProps<"Home">> = ({ navigation }) => {
             iconStyle={{ padding: 5 }}
             buttonText="Buscar por ubicación"
           />
-          <ButtonComponent
+          {/* <ButtonComponent
             onPress={() =>
               navigation.navigate("SearchScreen", { type: "favs" })
             }
@@ -73,7 +97,7 @@ const HomeScreen: React.FC<RootStackScreenProps<"Home">> = ({ navigation }) => {
             iconSize={37}
             iconStyle={{ padding: 7 }}
             buttonText="Mirar favoritos"
-          />
+          /> */}
         </View>
       </ScrollView>
     </View>

@@ -1,32 +1,72 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+
 type ItemProps = {
   item: ItemData;
   onPress: () => void;
   backgroundColor: string;
   textColor: string;
+  image?: string;
 };
 export type ItemData = {
   id: string;
   title: string;
+  image?: string;
+  imagen?: string;
+  especie?: string[];
+  nombre_comun?: string;
+  habito?: string;
+  coordenadas?: {
+    [key: string]: [string, string];
+  };
+
+  id_campus_volador?: string;
+  id_campus_minas?: string;
+  id_campus_escuela?: string;
+  id_campus_paysandu?: string;
+  id_campus_pmineria?: string;
+  id_campus_rio?: string;
+  id_campus_sanpablo?: string;
 };
 const ProfileSquare = ({
   item,
   onPress,
   backgroundColor,
   textColor,
+  image,
 }: ItemProps) => {
+  // const handlePress = async () => {
+  //   if (typeof onPress === "function") {
+  //     const result: any = onPress();
+  //     if (result instanceof Promise) {
+  //       try {
+  //         await result;
+  //       } catch (error) {
+  //         console.error("Error al manejar la promesa:", error);
+  //       }
+  //     }
+  //   }
+  // };
+
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[styles.item, { backgroundColor }]}
     >
       <Image
-        source={require("../../images/1310-flor.jpg")}
+        source={
+          image
+            ? {
+                uri: image,
+              }
+            : require("../../images/1310-flor.jpg")
+        }
         style={styles.image}
       />
       <View style={styles.textContainer}>
-        <Text style={[styles.title, { color: textColor }]}>{item.title}</Text>
+        <Text style={[styles.title, { color: textColor }]}>
+          {item.title ? item.title : item?.especie[0]}
+        </Text>
       </View>
     </TouchableOpacity>
   );

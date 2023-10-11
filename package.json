@@ -1,5 +1,5 @@
 {
-  "name": "arboletumapp",
+  "name": "arboretumapp",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "expo-font": "^11.4.0",
     "expo-splash-screen": "^0.20.5",
     "expo-status-bar": "~1.6.0",
+    "firebase": "^10.4.0",
     "react": "18.2.0",
     "react-native": "0.72.3",
     "react-native-gesture-handler": "^2.12.1",
