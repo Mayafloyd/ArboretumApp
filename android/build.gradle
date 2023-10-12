@@ -19,7 +19,7 @@ buildscript {
     dependencies {
         classpath('com.android.tools.build:gradle:7.4.2')
         classpath('com.facebook.react:react-native-gradle-plugin')
-        // implementation platform('com.google.firebase:firebase-bom:32.3.1')
+        implementation platform('com.google.firebase:firebase-bom:32.3.1')
     }
     // plugins {
     // // ...
@@ -37,10 +37,10 @@ buildscript {
 //       id 'com.google.gms.google-services' version '4.3.8' apply false
 //     id 'com.android.application'
 // }
-  dependencies {
+//   dependencies {
         
-        implementation platform('com.google.firebase:firebase-bom:32.3.1')
-    }
+//         implementation platform('com.google.firebase:firebase-bom:32.3.1')
+//     }
 
 allprojects {
     repositories {
