@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "959289453092",
+    "project_id": "arboretum-y-palmetum-unmed",
+    "storage_bucket": "arboretum-y-palmetum-unmed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959289453092:android:fc9bdeb742b0afb9b506b1",
+        "android_client_info": {
+          "package_name": "com.mayafloyd.ArboletumApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0zU92mjrURbcR4HrrgWGG9DDks_jjhzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
