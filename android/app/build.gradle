@@ -2,6 +2,10 @@ apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 apply plugin:"com.google.gms.google-services"
 
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
@@ -137,10 +141,8 @@ android {
     }
 }
 
-plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'
-}
+
+
 dependencies {
 
      
