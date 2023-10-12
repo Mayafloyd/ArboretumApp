@@ -21,6 +21,7 @@ buildscript {
         classpath('com.facebook.react:react-native-gradle-plugin')
         // compile platform('com.google.firebase:firebase-bom:32.3.1')
     }
+
     // plugins {
     // // ...
 
@@ -33,6 +34,10 @@ buildscript {
 
     // }
 }
+
+    plugins {
+        id("com.google.gms.google-services") version "4.3.15" apply false
+    }
 // plugins {
 //       id 'com.google.gms.google-services' version '4.3.8' apply false
 //     id 'com.android.application'
