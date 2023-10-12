@@ -33,10 +33,10 @@ buildscript {
 
     // }
 }
-plugins {
-      id 'com.google.gms.google-services' version '4.3.8' apply false
-    id 'com.android.application'
-}
+// plugins {
+//       id 'com.google.gms.google-services' version '4.3.8' apply false
+//     id 'com.android.application'
+// }
   dependencies {
         
         implementation platform('com.google.firebase:firebase-bom:32.3.1')
