@@ -7,11 +7,11 @@ import {
   ScrollView,
   // PermissionsAndroid,
 } from "react-native";
-// import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import { RootStackScreenProps } from "../../navigation/Navigation";
 import { ListItem } from "@rneui/themed";
 import { FontAwesome } from "@expo/vector-icons";
-// import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
   route,
@@ -83,7 +83,7 @@ const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
           <View
             style={{ flex: 1, width: "100%", height: 400, borderRadius: 20 }}
           >
-            {/* <MapView
+            <MapView
               style={styles.map}
               initialRegion={{
                 latitude: 6.26095398148613,
@@ -128,7 +128,7 @@ const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
                 title={"title"}
                 description={"description"}
               />
-            </MapView> */}
+            </MapView>
           </View>
         </View>
       </ScrollView>
