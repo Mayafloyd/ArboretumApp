@@ -11,70 +11,13 @@ import MapView, { Marker } from "react-native-maps";
 import { RootStackScreenProps } from "../../navigation/Navigation";
 import { ListItem } from "@rneui/themed";
 import { FontAwesome } from "@expo/vector-icons";
-// import { ItemData } from "../../components/ProfileSquare";
-// import { getDoc } from "firebase/firestore";
-// import { getDocRef } from "../../firebase/firebaseConfig";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-// type ItemProps = {
-//   item: ItemData;
-// };
 
 const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
   route,
-  // navigation,
 }) => {
   const { item } = route.params;
   console.log("ITEM PROFILE", item, !item.especie);
-
-  // useEffect(() => {
-  //   if (!item.especie) {
-  //     console.log("entra");
-  //     let campus: string;
-  //     let id: string;
-  //     if (item.id_campus_volador) {
-  //       campus = "CAMPUS-VOLADOR";
-  //       id = item.id_campus_volador;
-  //     } else if (item.id_campus_minas) {
-  //       campus = "CAMPUS-MINAS";
-  //       id = item.id_campus_minas;
-  //     } else if (item.id_campus_escuela) {
-  //       campus = "CAMPUS-ESCUELAUN";
-  //       id = item.id_campus_escuela;
-  //     } else if (item.id_campus_rio) {
-  //       campus = "CAMPUS-RIO";
-  //       id = item.id_campus_rio;
-  //     } else if (item.id_campus_paysandu) {
-  //       campus = "CAMPUS-PAYSANDU";
-  //       id = item.id_campus_paysandu;
-  //     } else if (item.id_campus_pmineria) {
-  //       campus = "CAMPUS-PMINERIA";
-  //       id = item.id_campus_pmineria;
-  //     } else if (item.id_campus_sanpablo) {
-  //       campus = "CAMPUS-SANPABLO";
-  //       id = item.id_campus_sanpablo;
-  //     }
-  //     console.log("getDocRef(campus, id)", getDocRef(campus, id));
-  //     getDoc(getDocRef(campus, id))
-  //       .then((snapshot) => {
-  //         if (snapshot) {
-  //           // Verifica que snapshot no sea undefined
-  //           const snapshotData = snapshot.data() as ItemData;
-  //           if (snapshotData) {
-  //             // Verifica que snapshotData no sea undefined
-  //             setitem(snapshotData);
-  //           } else {
-  //             console.log("Snapshot data is undefined");
-  //           }
-  //         } else {
-  //           console.log("Snapshot is undefined");
-  //         }
-  //       })
-  //       .catch((err) => {
-  //         console.log("ERR: colRefTodas", err.message);
-  //       });
-  //   }
-  // }, [item]);
 
   return (
     <View style={styles.container}>
@@ -140,7 +83,7 @@ const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
           <View
             style={{ flex: 1, width: "100%", height: 400, borderRadius: 20 }}
           >
-            <MapView
+            {/* <MapView
               style={styles.map}
               initialRegion={{
                 latitude: 6.26095398148613,
@@ -180,12 +123,12 @@ const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
                   )
                 )}
 
-              {/* <Marker
-              coordinate={{ latitude: 6.2613, longitude: -75.5772 }}
-              title={"title"}
-              description={"description"}
-            /> */}
-            </MapView>
+              <Marker
+                coordinate={{ latitude: 6.2613, longitude: -75.5772 }}
+                title={"title"}
+                description={"description"}
+              />
+            </MapView> */}
           </View>
         </View>
       </ScrollView>
