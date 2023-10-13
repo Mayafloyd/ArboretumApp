@@ -17,7 +17,7 @@ const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
   route,
 }) => {
   const { item } = route.params;
-  console.log("ITEM PROFILE", item, !item.especie);
+  // console.log("ITEM PROFILE", item, !item.especie);
 
   return (
     <View style={styles.container}>
