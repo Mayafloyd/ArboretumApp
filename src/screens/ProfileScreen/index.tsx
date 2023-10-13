@@ -7,11 +7,11 @@ import {
   ScrollView,
   // PermissionsAndroid,
 } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+// import MapView, { Marker } from "react-native-maps";
 import { RootStackScreenProps } from "../../navigation/Navigation";
 import { ListItem } from "@rneui/themed";
 import { FontAwesome } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+// import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ProfileScreen: React.FC<RootStackScreenProps<"Profile">> = ({
   route,
